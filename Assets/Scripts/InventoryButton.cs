@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] Image icon;
     [SerializeField] Text text;
+    [SerializeField] Image highlight;
 
     int myIndex;
 
@@ -42,9 +44,12 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        ItemContainer inventory = GameManager.instance.inventoryContainer;
-        GameManager.instance.dragAndDropController.OnClick(inventory.slots[myIndex]);
+        ItemPanel itemPanel = transform.parent.GetComponent<ItemPanel>();
+        itemPanel.OnClick(myIndex);
+    }
 
-        transform.parent.GetComponent<InventoryPanel>().Show();
+    public void Highlight(bool b)
+    {
+        highlight.gameObject.SetActive(b);
     }
 }
