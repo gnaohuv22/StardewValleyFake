@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-[CreateAssetMenu(menuName = "Data/ToolAction/Plow")]
+[CreateAssetMenu(menuName = "Data/ToolAction/Plow Tile")]
 public class PlowTile : ToolAction
 {
     [SerializeField] List<TileBase> canPlow;
@@ -11,7 +11,7 @@ public class PlowTile : ToolAction
     {
         TileBase tileToPlow = titeMapReadController.GetTileBase(gridPosition);
 
-        if(canPlow.Contains(tileToPlow) == false)
+        if (canPlow.Contains(tileToPlow) == false)
         {
             return false;
         }
