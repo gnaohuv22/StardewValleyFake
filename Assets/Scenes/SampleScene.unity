@@ -4650,8 +4650,6 @@ MonoBehaviour:
   markerManager: {fileID: 1481512582}
   tileMapReadController: {fileID: 1332239774}
   maxDistance: 2
-  cropsManager: {fileID: 1332239776}
-  plowableTiles: {fileID: 11400000, guid: dd288f299bfe04840958db68b05e8ddc, type: 2}
 --- !u!114 &652066363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7028,9 +7026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 529863558}
-  tileDatas:
-  - {fileID: 11400000, guid: fea0490f5c70e8d4da4420884d463c46, type: 2}
-  - {fileID: 11400000, guid: dd288f299bfe04840958db68b05e8ddc, type: 2}
+  cropsManager: {fileID: 1332239776}
 --- !u!114 &1332239775
 MonoBehaviour:
   m_ObjectHideFlags: 0
