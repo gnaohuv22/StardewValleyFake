@@ -6892,6 +6892,7 @@ MonoBehaviour:
   player: {fileID: 652066354}
   inventoryContainer: {fileID: 11400000, guid: 85df75764f44e8e41a1d707e3f4e1992, type: 2}
   dragAndDropController: {fileID: 1332239773}
+  timeController: {fileID: 1332239772}
 --- !u!4 &1332239770
 Transform:
   m_ObjectHideFlags: 0
