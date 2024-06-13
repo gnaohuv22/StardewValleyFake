@@ -11,4 +11,5 @@ public class Item : ScriptableObject
     public ToolAction onAction;
     public ToolAction onTiteMapAction;
     public ToolAction onItemUsed;
+    public Crop crop;
 }
