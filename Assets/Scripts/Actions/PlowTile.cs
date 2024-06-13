@@ -7,15 +7,15 @@ using UnityEngine.Tilemaps;
 public class PlowTile : ToolAction
 {
     [SerializeField] List<TileBase> canPlow;
-    public override bool OnApplyToTileMap(Vector3Int gridPosition, TileMapReadController titeMapReadController, Item item)
+    public override bool OnApplyToTileMap(Vector3Int gridPosition, TileMapReadController tileMapReadController, Item item)
     {
-        TileBase tileToPlow = titeMapReadController.GetTileBase(gridPosition);
+        TileBase tileToPlow = tileMapReadController.GetTileBase(gridPosition);
 
         if (canPlow.Contains(tileToPlow) == false)
         {
             return false;
         }
-        titeMapReadController.cropsManager.Plow(gridPosition);
+        tileMapReadController.cropsManager.Plow(gridPosition);
 
         return true;
     }

@@ -11,12 +11,12 @@ public class ToolsCharacterController : MonoBehaviour
     Rigidbody2D rigidbody2d;
     ToolbarController toolbarController;
     Animator animator;
-
     [SerializeField] float offsetDistance = 1f;
     [SerializeField] float sizeOfInteractableArea = 1.2f;
     [SerializeField] MarkerManager markerManager;
     [SerializeField] TileMapReadController tileMapReadController;
     [SerializeField] float maxDistance = 1.5f;
+    [SerializeField] ToolAction onTilePickUp;
 
 
 
@@ -89,10 +89,15 @@ public class ToolsCharacterController : MonoBehaviour
 
     private void UseToolGrid()
     {
-        if (selectable)
+        if (selectable == true)
         {
             Item item = toolbarController.getItem;
-            if(item == null) { return; }
+            if(item == null) 
+            {
+                PickUpTile();    
+                return; 
+            
+            }
             if(item.onTiteMapAction == null) { return; }
             animator.SetTrigger("act");
             bool complete = item.onTiteMapAction.OnApplyToTileMap(
@@ -109,5 +114,11 @@ public class ToolsCharacterController : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void PickUpTile()
+    {
+        if(onTilePickUp == null) { return; }
+        onTilePickUp.OnApplyToTileMap(selectedTilePosition, tileMapReadController, null);
     }
 }
