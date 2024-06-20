@@ -17,6 +17,7 @@ public class GameSceneManager : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene().name;
     }
+
     [SerializeField] ScreenTint screenTint;
     [SerializeField] CameraConfiner cameraConfiner;
     string currentScene;
