@@ -38,6 +38,7 @@ public class GameSceneManager : MonoBehaviour
             if (unload.isDone) { unload = null; }
         yield return new WaitForSeconds(0.1f);}
         yield return new WaitForEndOfFrame();
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentScene));
         cameraConfiner.UpdateBounds();
         screenTint.unTint();
         
